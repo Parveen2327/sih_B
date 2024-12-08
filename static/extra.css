@@ -1,0 +1,265 @@
+  /* Section and Container Styles */
+  .feedback {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Content Styling */
+  .feedback-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .section-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .section-text {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  /* Form Styling */
+  .feedback-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: hsl(168, 56%, 89%);
+  }
+  
+  .form-textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  
+  .form-submit {
+    background-color: hsl(167, 71%, 66%);
+    color: #fff;
+    padding: 14px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+  }
+  
+  .form-submit:hover {
+    background-color: hsl(167, 77%, 51%);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 30px;
+    }
+  
+    .section-text {
+      font-size: 16px;
+    }
+  
+    .feedback-form {
+      padding: 30px;
+    }
+  
+    .form-input,
+    .form-textarea {
+      font-size: 14px;
+    }
+  }
+  
+
+
+  
+/* Initially hide the navbar items on small screens */
+@media screen and (max-width: 768px) {
+  .navbar-list {
+      display: none; /* Hide the items by default */
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px; /* Adjust depending on your navbar height */
+      left: 0;
+      background-color: #fff; /* Adjust background color */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show the items when the menu is active */
+  .navbar.active .navbar-list {
+      display: flex;
+  }
+
+  .navbar-toggle {
+    margin-top: 20px;
+      display: block; /* Show the toggle button */
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 999;
+  }
+
+  .navbar-toggle-icon {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      border-radius: 5px;
+      position: relative;
+  }
+
+  .navbar-toggle-icon::before,
+  .navbar-toggle-icon::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      border-radius: 5px;
+  }
+
+  .navbar-toggle-icon::before {
+      top: -8px;
+  }
+
+  .navbar-toggle-icon::after {
+      top: 8px;
+  }
+}
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to multiple rows */
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center content */
+  padding: 20px;
+}
+
+.video-box {
+  position: relative; /* For positioning the button */
+  width: 300px;
+  height: 300px; /* Increase height to accommodate title */
+  overflow: hidden; /* Ensures the border-radius effect is clean */
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Fallback background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-box:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fills the container */
+  border-radius: 15px; /* Matches the parent's border-radius */
+}
+
+.video-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.play-stop-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  outline: none;
+  z-index: 2; /* Ensures the button stays on top of video */
+}
+
+.play-stop-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .video-box {
+      width: 100%;
+      max-width: 300px;
+      height: 250px;
+  }
+  .video-name {
+      font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-box {
+      width: 100%;
+      height: 220px;
+  }
+  .video-name {
+      font-size: 12px;
+  }
+}
